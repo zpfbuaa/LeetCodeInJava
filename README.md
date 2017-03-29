@@ -1,10 +1,39 @@
 # LeetCodeInJava
 
 ## List
+*	[#86. Partition List(Using Two Nodes With Head)](#86)
 *	[#87. Scramble String(BackTrack)](#87)
 *	[#88. Merge Sorted Array(Traverse Array From Back to Head)](#88) 
 
 ## Detail
+#### <font color = Green> <span id="86">#86. Partition List</span></font>
+
+
+#### LeetCode Link:<br>
+
+#### Problem description:<br>
+>Given a linked list and a value x, partition it such that all nodes less than x come before nodes greater than or equal to x.
+
+>You should preserve the original relative order of the nodes in each of the two partitions.
+>
+>For example,
+><pre>
+>Given 1->4->3->2->5->2 and x = 3,
+>return 1->2->2->4->3->5.
+></pre>
+
+#### Source code:<br>
+
+#### <font color = Blue size = 5> Analysis:</font>
+
+>As we can see, we select a pivot to achieve the task, partitioning this list. After partition, the val which is less than `x` is moved before the numbers which are greater or equal to `x`. At the same time, we can't change the original relative order.
+>
+>Here, we choose a smart way to solve this problem by creating two nodes(`less` && `greq`) with head. One is used to hold the node which are less than `x`, the other one is used to hold the nodes whic are greater or equal to `x`. 
+>
+>However, before we doing so, the first thing needed to do is to keep the head so when it comes to return value, it is very easy to find the node's head. Therefore we need other two pointers to record the heads.
+>
+>Then we just need to traverse the list, when meet the node which's val is less than `x` and put it to the `less` node. The same way, when meet the node which's val is greater or equal to `x`,, just move it to the `greq` node.
+
 
 #### <font color = green><span id="87">87. Scramble String</span></font>
 
@@ -12,10 +41,8 @@
 #### LeetCode Link:<br>
 [https://leetcode.com/problems/scramble-string/#/description](https://leetcode.com/problems/scramble-string/#/description)
 #### Problem description:<br>
->
-Given a string s1, we may represent it as a binary tree by partitioning it to two non-empty substrings recursively.
->
-Below is one possible representation of s1 = "great":
+>Given a string s1, we may represent it as a binary tree by partitioning it to two non-empty substrings recursively.
+>Below is one possible representation of s1 = "great":
 <pre>
     great
    /    \
@@ -25,9 +52,8 @@ g   r  e   at
            / \
           a   t
 </pre>
-To scramble the string, we may choose any non-leaf node and swap its two children.
->
-For example, if we choose the node "gr" and swap its two children, it produces a scrambled string "rgeat".
+>To scramble the string, we may choose any non-leaf node and swap its two children.
+>For example, if we choose the node "gr" and swap its two children, it produces a scrambled string "rgeat".
 <pre>
     rgeat
    /    \
@@ -38,8 +64,7 @@ r   g  e   at
           a   t
 </pre>
 We say that "rgeat" is a scrambled string of "great".
->
-Similarly, if we continue to swap the children of nodes "eat" and "at", it produces a scrambled string "rgtae".
+>Similarly, if we continue to swap the children of nodes "eat" and "at", it produces a scrambled string "rgtae".
 <pre>
     rgtae
    /    \
@@ -49,13 +74,13 @@ r   g  ta  e
        / \
       t   a
 </pre>
-We say that "rgtae" is a scrambled string of "great".
->
-Given two strings s1 and s2 of the same length, determine if s2 is a scrambled string of s1.'
+>We say that "rgtae" is a scrambled string of "great".
+
+>Given two strings s1 and s2 of the same length, determine if s2 is a scrambled string of s1.'
 
 #### Source code:<br>
 
-#### Analysis:
+#### <font color = Blue size = 5> Analysis:</font>
 >First, we just check whether s1 or s2 is equal to null in order to cut branches. If s1 is equal to s2, then s2 is a scrambled string of s1. Besides, if  s2 is a srcamled string of s1, then the length of s2 have to equal with the length of s1. At the same time, s1 and s2 must contain same numbers of letters. That means after sort s1 and s2, s1 is equal to s2. But we can just use a array[26] to solve this problem.
 >
 > Then, here comes the problem. How to judge s2 is a scrambled string of s1? Accoring to the example given to us, it is easy to think about using back-track.    Following is the core code for back-track:
@@ -82,7 +107,7 @@ You may assume that nums1 has enough space (size that is greater or equal to m +
 
 #### Source code:<br>
 [https://github.com/zpfbuaa/LeetCodeInJava/blob/master/LeetCodeInJava/Solution88.class](https://github.com/zpfbuaa/LeetCodeInJava/blob/master/LeetCodeInJava/Solution88.class)
-#### Analysis:
+#### <font color = Blue size = 5> Analysis:</font>
 
 >Since array `nums1` is enough larger to hold the numbers from both arrays. Besides, we already know the size of each array(`nums1` holds `n` numbers and `nums2` holds `m` numbers). Therefore, we just use need to compare each element in two arrays from back to head, and always put the larger one to arrays `nums1`.
 
