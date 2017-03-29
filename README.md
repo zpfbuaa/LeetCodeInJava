@@ -23,7 +23,7 @@
 ></pre>
 
 #### Source code:<br>
-
+[https://github.com/zpfbuaa/LeetCodeInJava/blob/master/LeetCodeInJava/Solution86.java](https://github.com/zpfbuaa/LeetCodeInJava/blob/master/LeetCodeInJava/Solution86.java)
 #### <font color = Blue size = 5> Analysis:</font>
 
 >As we can see, we select a pivot to achieve the task, partitioning this list. After partition, the val which is less than `x` is moved before the numbers which are greater or equal to `x`. At the same time, we can't change the original relative order.
