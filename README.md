@@ -59,7 +59,8 @@ Given two strings s1 and s2 of the same length, determine if s2 is a scrambled s
 >First, we just check whether s1 or s2 is equal to null in order to cut branches. If s1 is equal to s2, then s2 is a scrambled string of s1. Besides, if  s2 is a srcamled string of s1, then the length of s2 have to equal with the length of s1. At the same time, s1 and s2 must contain same numbers of letters. That means after sort s1 and s2, s1 is equal to s2. But we can just use a array[26] to solve this problem.
 >
 > Then, here comes the problem. How to judge s2 is a scrambled string of s1? Accoring to the example given to us, it is easy to think about using back-track.    Following is the core code for back-track:
-> <pre>
+> 
+<pre>
 for(int i = 1; i < len; i++){
 	if(isScramble(s1.substring(0,i), s2.substring(0,i)) && isScramble(s1.substring(i), s2.substring(i))) return true;
 	if(isScramble(s1.substring(0,i), s2.substring(len-i)) && isScramble(s1.substring(i), s2.substring(0,len-i))) return true;
