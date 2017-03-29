@@ -65,7 +65,7 @@ for(int i = 1; i < len; i++){
 	if(isScramble(s1.substring(0,i), s2.substring(len-i)) && isScramble(s1.substring(i), s2.substring(0,len-i))) return true;
 }   
 </pre>
-
+>
 
 #### <font color = green><span id="88">#88. Merge Sorted Array</span></font>
 
