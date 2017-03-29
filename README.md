@@ -83,8 +83,8 @@ You may assume that nums1 has enough space (size that is greater or equal to m +
 #### Source code:<br>
 [https://github.com/zpfbuaa/LeetCodeInJava/blob/master/LeetCodeInJava/Solution88.class](https://github.com/zpfbuaa/LeetCodeInJava/blob/master/LeetCodeInJava/Solution88.class)
 #### Analysis:
->
-Since array `nums1` is enough larger to hold the numbers from both arrays. Besides, we already know the size of each array(`nums1` holds `n` numbers and `nums2` holds `m` numbers). Therefore, we just use need to compare each element in two arrays from back to head, and always put the larger one to arrays `nums1`.
+
+>Since array `nums1` is enough larger to hold the numbers from both arrays. Besides, we already know the size of each array(`nums1` holds `n` numbers and `nums2` holds `m` numbers). Therefore, we just use need to compare each element in two arrays from back to head, and always put the larger one to arrays `nums1`.
 
 >After going through the array from back to head, we also need to verify whether there is left numbers in array `nums2`. If there are some numbers left in array `nums2`, we need to put them all into the array `nums1`<br>
 >Because we have to traverse the array, so the time complexity is O(n) and it doesn't need extra space.
