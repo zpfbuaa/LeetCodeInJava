@@ -1,16 +1,79 @@
 # LeetCodeInJava
 
 ## List
+*	[#84. Largest Rectangle in Histogram(Using Stack)](#84)
+*	[#85. Maximal Rectangle(DP solution)](#85)
 *	[#86. Partition List(Using Two Nodes With Head)](#86)
 *	[#87. Scramble String(BackTrack)](#87)
 *	[#88. Merge Sorted Array(Traverse Array From Back to Head)](#88) 
 
 ## Detail
-#### <font color = Green> <span id="86">#86. Partition List</span></font>
+#### <font color = Green> <span id="84">#84. Largest Rectangle in Histogram</span></font>
 
 
 #### LeetCode Link:<br>
 
+#### Problem description:<br>
+>Given n non-negative integers representing the histogram's bar height where the width of each bar is 1, find the area of largest rectangle in the histogram.
+>
+>![#84\_1.histogram]()
+>
+>Above is a histogram where width of each bar is 1, given height = [2,1,5,6,2,3].
+>
+>![#84\_2.histogram\_area]()
+>
+>The largest rectangle is shown in the shaded area, which has area = 10 unit.
+>
+>For example, Given heights = [2,1,5,6,2,3],
+>
+>return 10.
+
+#### Source code:<br>
+
+#### <font color = Blue size = 5> Analysis:</font>
+>A great explanation: [https://www.youtube.com/watch?v=VNbkzsnllsU](https://www.youtube.com/watch?v=VNbkzsnllsU)
+>
+>We traverse the array, and using a stack to keep the index which is heighter than the last one bar. If the stack is empty or we meet a bar is heighter than the last bar, we just push the index into the stack.Others we start to  calculate the rectangle's size until now position. Besides, we need to know the length of this rectangle, (i - 1 - s.peek()) is the length of the rectangle while the stack is not empty and the length is i while the stack is empty.
+>
+
+
+#### <font color = Green> <span id="85">#85. Maximal Rectangle</span></font>
+
+#### LeetCode Link:<br>
+[https://leetcode.com/problems/maximal-rectangle/#/description](https://leetcode.com/problems/maximal-rectangle/#/description)
+#### Problem description:<br>
+>Given a 2D binary matrix filled with 0's and 1's, find the largest rectangle containing only 1's and return its area.
+>
+>For example, given the following matrix:
+><pre>
+1 0 1 0 0
+1 0 1 1 1
+1 1 1 1 1
+1 0 0 1 0
+></pre>Return 6.
+
+#### Source code:<br>
+
+
+#### <font color = Blue size = 5> Analysis:</font>
+>The DP solution to this problem is retraver row by ros, starting form the first row. The maximal rectangle area at (i,j) can be computed by right(i,j)-left(i,j)*height(i,j).
+>
+>All those three varibles left, right, and height can be determined by the information from previous row, and also related to the current row. So it is a DP problem. The transition equations are:
+>
+>`left(i,j) = max(left(i-1,j),cur_left)`
+>
+>`right(i,j) = min(right(i-1,j),cur_right)`
+>
+>`height(i,j) = height(i-1,j)+1 if matrix[i][j] == 1`
+>
+>`height(i,j) = 0,if matrix[i][j] == '0'`
+
+
+#### <font color = Green> <span id="86">#86. Partition List</span></font>
+
+
+#### LeetCode Link:<br>
+[https://leetcode.com/problems/partition-list/#/description](https://leetcode.com/problems/partition-list/#/description)
 #### Problem description:<br>
 >Given a linked list and a value x, partition it such that all nodes less than x come before nodes greater than or equal to x.
 
