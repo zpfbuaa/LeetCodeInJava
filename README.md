@@ -46,10 +46,10 @@
 >
 >For example, given the following matrix:
 ><pre>
-1 0 1 0 0
-1 0 1 1 1
-1 1 1 1 1
-1 0 0 1 0
+>1 0 1 0 0
+>1 0 1 1 1
+>1 1 1 1 1
+>1 0 0 1 0
 ></pre>Return 6.
 
 #### Source code:<br>
