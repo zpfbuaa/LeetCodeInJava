@@ -1,6 +1,8 @@
 # LeetCodeInJava
 
 ## List
+*	[#82. Remove Duplicates from Sorted List II(Only Distinct Left)](#82)
+*	[#83. Remove Duplicates from Sorted List(Recursion)](#83)
 *	[#84. Largest Rectangle in Histogram(Using Stack)](#84)
 *	[#85. Maximal Rectangle(DP solution)](#85)
 *	[#86. Partition List(Using Two Nodes With Head)](#86)
@@ -8,11 +10,75 @@
 *	[#88. Merge Sorted Array(Traverse Array From Back to Head)](#88) 
 
 ## Detail
+#### <font color = Green> <span id="82">#82. Remove Duplicates from Sorted List II</span></font>
+
+
+#### LeetCode Link:<br>
+[https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/#/description](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/#/description)
+#### Problem description:<br>
+>Given a sorted linked list, delete all nodes that have duplicate numbers, leaving only distinct numbers from the original list.
+>
+>For example,
+>
+>Given 1->2->3->3->4->4->5, return 1->2->5.
+>
+>Given 1->1->1->2->3, return 2->3.
+
+#### Source code:<br>
+
+#### <font color = Blue size = 5> Analysis:</font>
+>This problem is quiet different from the last one #83Remove Duplicates from Sorted List. We need to keep only distinct numbers in the list. However, we still have a already sorted list. To solve this problem, we can use the recursion too. We reverse the whole list, move the node's next to a node which has a different number. 
+>
+>How to do this? The last problem, we just change the value of each node, but here we need to change the node's next pointer. Going through the whole list, until find a node which's value is different, and move the front node's next pointer to this new node.
+>
+>That's to say, we don't keep the numbers which apperars more than once. We jump out of every duplicate numbers and hold the only distinct numbers.
+>
+>Here goes the core code:
+><pre>
+>if (head == null) return null;
+	if (head.next != null && head.val == head.next.val) {
+	    while (head.next != null && head.val == head.next.val) {
+	        head = head.next;
+	    }
+	    return deleteDuplicates(head.next);
+	   } else {
+	    head.next = deleteDuplicates(head.next);
+	  }
+	return head;
+>
+
+
+#### <font color = Green> <span id="83">#83. Remove Duplicates from Sorted List</span></font>
+
+#### LeetCode Link:<br>
+[https://leetcode.com/problems/remove-duplicates-from-sorted-list/#/description](https://leetcode.com/problems/remove-duplicates-from-sorted-list/#/description)
+#### Problem description:<br>
+>Given a sorted linked list, delete all duplicates such that each element appear only once.
+>
+>For example,
+>
+>Given 1->1->2, return 1->2.
+>
+>Given 1->1->2->3->3, return 1->2->3.
+
+#### Source code:<br>
+
+#### <font color = Blue size = 5> Analysis:</font>
+>Before we delete elements from list, we should notic that the list is already sorted. Therefore, we just compare the value of each two adjacent nodes. If they are same, we need change the value and keep each number just appear one time. We can achieve this goal easily.
+>
+>In order to remove duplicates in list, it is esay to think about recursion by changing each node's next pointer. The recursion code is really short and very intuitive. 
+><pre>
+>if(head == null || head.next == null) return head;
+>head.next = deleteDuplicates(head.next);
+>return head.val == head.next.val ? head.next : head;
+></code>
+
+
 #### <font color = Green> <span id="84">#84. Largest Rectangle in Histogram</span></font>
 
 
 #### LeetCode Link:<br>
-
+[https://leetcode.com/problems/largest-rectangle-in-histogram/#/description](https://leetcode.com/problems/largest-rectangle-in-histogram/#/description)
 #### Problem description:<br>
 >Given n non-negative integers representing the histogram's bar height where the width of each bar is 1, find the area of largest rectangle in the histogram.
 >
