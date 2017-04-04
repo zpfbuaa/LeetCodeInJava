@@ -1,13 +1,13 @@
 # LeetCodeInJava
 
 ## List
-*	[#82. Remove Duplicates from Sorted List II(Only Distinct Left)](#82)
-*	[#83. Remove Duplicates from Sorted List(Recursion)](#83)
-*	[#84. Largest Rectangle in Histogram(Using Stack)](#84)
-*	[#85. Maximal Rectangle(DP solution)](#85)
-*	[#86. Partition List(Using Two Nodes With Head)](#86)
-*	[#87. Scramble String(BackTrack)](#87)
-*	[#88. Merge Sorted Array(Traverse Array From Back to Head)](#88) 
+*	[#82. Remove Duplicates from Sorted List II(Only Distinct Left)](#-82-remove-dumplicats-from-sorted-list-ii)
+*	[#83. Remove Duplicates from Sorted List(Recursion)](#-83-remove-dumplicats-from-sorted-list)
+*	[#84. Largest Rectangle in Histogram(Using Stack)](#84-largest-rectangle-in-histogram)
+*	[#85. Maximal Rectangle(DP solution)](#85-maximal-rectangle)
+*	[#86. Partition List(Using Two Nodes With Head)](#86-partition-list)
+*	[#87. Scramble String(BackTrack)](#87-scramble-string)
+*	[#88. Merge Sorted Array(Traverse Array From Back to Head)](#88-merge-sorted-array) 
 
 ## Detail
 #### <font color = Green> <span id="82">#82. Remove Duplicates from Sorted List II</span></font>
